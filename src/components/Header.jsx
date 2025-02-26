@@ -23,7 +23,7 @@ const Header = () => {
               Home
             </Link>
             <Link to="/restaurants" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Restaurants
+              <button className='resto'>Restaurants</button>
             </Link>
             <Link to="/orders" className="text-gray-600 hover:text-gray-900 transition-colors relative">
               Orders
