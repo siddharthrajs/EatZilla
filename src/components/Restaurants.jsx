@@ -4,14 +4,14 @@ import Header from './Header';
 
 const Restaurants = () => {
   const allRestaurants = [
-    { id: 1, name: "Pizza Palace", rating: 4.5, deliveryTime: "25-35 min", cuisine: "Italian" },
-    { id: 2, name: "Burger Barn", rating: 4.3, deliveryTime: "20-30 min", cuisine: "American" },
-    { id: 3, name: "Sushi Select", rating: 4.7, deliveryTime: "30-40 min", cuisine: "Japanese" },
-    { id: 4, name: "Taco Temple", rating: 4.4, deliveryTime: "20-35 min", cuisine: "Mexican" },
-    { id: 5, name: "Curry House", rating: 4.6, deliveryTime: "25-40 min", cuisine: "Indian" },
-    { id: 6, name: "Wok & Roll", rating: 4.2, deliveryTime: "20-35 min", cuisine: "Chinese" },
-    { id: 7, name: "Mediterranean Delight", rating: 4.8, deliveryTime: "30-45 min", cuisine: "Mediterranean" },
-    { id: 8, name: "Thai Spice", rating: 4.5, deliveryTime: "25-40 min", cuisine: "Thai" },
+    { id: 1, name: "Pizza Palace", rating: 4.5, deliveryTime: "25-35 min", cuisine: "Italian", image: "/eatzilla-images/pizza.jpg" },
+    { id: 2, name: "Burger Barn", rating: 4.3, deliveryTime: "20-30 min", cuisine: "American", image: "/eatzilla-images/burger.jpg" },
+    { id: 3, name: "Sushi Select", rating: 4.7, deliveryTime: "30-40 min", cuisine: "Japanese", image: "/eatzilla-images/sushi.jpg" },
+    { id: 4, name: "Taco Temple", rating: 4.4, deliveryTime: "20-35 min", cuisine: "Mexican", image: "/eatzilla-images/mexican.jpg" },
+    { id: 5, name: "Curry House", rating: 4.6, deliveryTime: "25-40 min", cuisine: "Indian", image: "/eatzilla-images/indian-food.bmp" },
+    { id: 6, name: "Wok & Roll", rating: 4.2, deliveryTime: "20-35 min", cuisine: "Chinese", image: "/eatzilla-images/burger.jpg" },
+    { id: 7, name: "Mediterranean Delight", rating: 4.8, deliveryTime: "30-45 min", cuisine: "Mediterranean", image: "/eatzilla-images/mexican.jpg" },
+    { id: 8, name: "Thai Spice", rating: 4.5, deliveryTime: "25-40 min", cuisine: "Thai", image: "/eatzilla-images/mexican.jpg" },
   ];
 
   return (
@@ -27,7 +27,11 @@ const Restaurants = () => {
               to={`/restaurant/${restaurant.id}`}
               className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer"
             >
-              <div className="bg-gray-200 w-full h-48 rounded-t-lg"></div>
+              <img 
+                src={restaurant.image}
+                alt={restaurant.name}
+                className="w-full h-48 object-cover rounded-t-lg"
+              />
               <div className="p-4">
                 <h3 className="font-bold text-lg text-gray-900">{restaurant.name}</h3>
                 <p className="text-sm text-gray-600 mt-1">{restaurant.cuisine}</p>

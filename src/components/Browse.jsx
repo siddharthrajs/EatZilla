@@ -3,19 +3,19 @@ import Header from './Header'
 
 const Browse = () => {
   const popularRestaurants = [
-    { id: 1, name: "Pizza Palace", rating: 4.5, deliveryTime: "25-35 min" },
-    { id: 2, name: "Burger Barn", rating: 4.3, deliveryTime: "20-30 min" },
-    { id: 3, name: "Sushi Select", rating: 4.7, deliveryTime: "30-40 min" },
-    { id: 4, name: "Taco Temple", rating: 4.4, deliveryTime: "20-35 min" },
+    { id: 1, name: "Pizza Palace", rating: 4.5, deliveryTime: "25-35 min", image: "/eatzilla-images/pizza.jpg" },
+    { id: 2, name: "Burger Barn", rating: 4.3, deliveryTime: "20-30 min", image: "/eatzilla-images/burger.jpg" },
+    { id: 3, name: "Sushi Select", rating: 4.7, deliveryTime: "30-40 min", image: "/eatzilla-images/sushi.jpg" },
+    { id: 4, name: "Taco Temple", rating: 4.4, deliveryTime: "20-35 min", image: "/eatzilla-images/mexican.jpg" },
   ];
 
   const foodCategories = [
-    { id: 1, name: "Pizza" },
-    { id: 2, name: "Burgers" },
-    { id: 3, name: "Sushi" },
-    { id: 4, name: "Mexican" },
-    { id: 5, name: "Indian" },
-    { id: 6, name: "Chinese" },
+    { id: 1, name: "Pizza", image: "/eatzilla-images/pizza.jpg" },
+    { id: 2, name: "Burgers", image: "/eatzilla-images/burger.jpg" },
+    { id: 3, name: "Sushi", image: "/eatzilla-images/sushi.jpg" },
+    { id: 4, name: "Mexican", image: "/eatzilla-images/mexican.jpg" },
+    { id: 5, name: "Indian", image: "/eatzilla-images/indian-food.bmp" },
+    { id: 6, name: "Chinese", image: "/eatzilla-images/chinese.jpg" },
   ];
 
   return (
@@ -43,7 +43,11 @@ const Browse = () => {
                 key={category.id} 
                 className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer p-4"
               >
-                <div className="bg-gray-200 w-full h-24 rounded-lg mb-3"></div>
+                <img 
+                  src={category.image}
+                  alt={category.name}
+                  className="w-full h-24 object-cover rounded-lg mb-3"
+                />
                 <p className="text-center font-medium text-gray-800">{category.name}</p>
               </div>
             ))}
@@ -59,7 +63,11 @@ const Browse = () => {
                 key={restaurant.id} 
                 className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer"
               >
-                <div className="bg-gray-200 w-full h-48 rounded-t-lg"></div>
+                <img 
+                  src={restaurant.image}
+                  alt={restaurant.name}
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
                 <div className="p-4">
                   <h3 className="font-bold text-lg text-gray-900">{restaurant.name}</h3>
                   <div className="flex justify-between mt-2 text-sm text-gray-600">
@@ -83,13 +91,21 @@ const Browse = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Special Offers</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="bg-gray-200 w-full h-48"></div>
+              <img 
+                src="/eatzilla-images/free-delivery.bmp"
+                alt="Free delivery offer"
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
                 <p className="font-medium text-lg text-gray-900">Free delivery on your first order!</p>
               </div>
             </div>
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="bg-gray-200 w-full h-48"></div>
+              <img 
+                src="/eatzilla-images/20percent.bmp"
+                alt="Discount offer"
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
                 <p className="font-medium text-lg text-gray-900">20% off on selected restaurants</p>
               </div>
